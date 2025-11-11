@@ -1,0 +1,209 @@
+/* Header.css - scoped to Header component (class prefix: mc-) */
+
+.mc-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+}
+
+.mc-header__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Brand */
+.mc-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mc-header__logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Title text next to logo */
+.mc-header__title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.mc-header__name {
+  font-weight: 700;
+  color: #d32f2f; /* brand red */
+  font-size: 16px;
+  letter-spacing: 0.6px;
+}
+
+.mc-header__sub {
+  font-size: 11px;
+  color: #333;
+  margin-top: 2px;
+}
+
+/* Navigation */
+.mc-nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+/* Base link/button styling */
+.mc-nav .mc-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: #333;
+  padding: 8px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.mc-nav .mc-link:hover {
+  background: rgba(211, 47, 47, 0.08);
+  color: #d32f2f;
+}
+
+/* ✅ Active page highlight */
+.mc-nav .mc-link.active {
+  color: #d32f2f;
+  border-bottom: 2px solid #d32f2f;
+  background: rgba(211, 47, 47, 0.08);
+  font-weight: 600;
+}
+
+/* Actions */
+.mc-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Buttons */
+.mc-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* WhatsApp button (greenish) */
+.mc-btn--whatsapp {
+  background: #25d366;
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.mc-btn--whatsapp:hover {
+  background: #1ebe5d;
+}
+
+/* Call button (brand red) */
+.mc-btn--call {
+  background: transparent;
+  color: #d32f2f;
+  border: 1px solid rgba(211, 47, 47, 0.2);
+}
+
+.mc-btn--call:hover {
+  background: rgba(211, 47, 47, 0.08);
+}
+
+/* Hamburger (mobile) */
+.mc-hamburger {
+  display: none;
+  width: 40px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.mc-hamburger span {
+  display: block;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.mc-hamburger--open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.mc-hamburger--open span:nth-child(2) {
+  opacity: 0;
+}
+.mc-hamburger--open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile behavior */
+@media (max-width: 860px) {
+  .mc-nav {
+    position: absolute;
+    top: 72px;
+    right: 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    flex-direction: column;
+    width: 220px;
+    padding: 12px;
+    gap: 10px;
+    display: none;
+    border-radius: 8px;
+  }
+
+  .mc-nav.mc-nav--open {
+    display: flex;
+  }
+
+  .mc-header__actions .mc-btn--whatsapp,
+  .mc-header__actions .mc-btn--call {
+    display: none; /* hide buttons in top bar on small screens */
+  }
+
+  .mc-hamburger {
+    display: flex;
+  }
+}
+
+/* Smaller screens, compact brand */
+@media (max-width: 420px) {
+  .mc-header__logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .mc-header__name {
+    font-size: 14px;
+  }
+
+  .mc-nav {
+    right: 12px;
+    width: 180px;
+  }
+}

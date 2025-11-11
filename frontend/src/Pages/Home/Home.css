@@ -1,0 +1,309 @@
+/* ---------- Base ---------- */
+.home-page {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* ---------- Hero Section ---------- */
+.home-hero {
+  height: 90vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-hero-content {
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.home-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
+}
+
+.home-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  animation: fadeInUp 1.2s ease;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.home-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #d32f2f;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #b71c1c;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 2px solid #d32f2f;
+  color: #d32f2f;
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: #d32f2f;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- About Section ---------- */
+.home-about {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.home-about h2 {
+  color: #d32f2f;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.home-about h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #d32f2f;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.home-about p {
+  max-width: 800px;
+  margin: 0 auto 25px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ---------- Services Section ---------- */
+.home-services {
+  background: #f8f8f8;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.home-services h2 {
+  color: #d32f2f;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.service-item {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.service-item h3 {
+  color: #d32f2f;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.service-item p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ---------- Projects Section ---------- */
+.home-projects {
+  padding: 100px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.home-projects h2 {
+  color: #d32f2f;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.project-subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 50px;
+}
+
+.project-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  background: #fafafa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 18px;
+  text-align: left;
+}
+
+.project-info h3 {
+  color: #d32f2f;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.project-info p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.home-projects .btn-primary {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #d32f2f;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.home-projects .btn-primary:hover {
+  background: #b71c1c;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 1024px) {
+  .home-hero-content h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-hero-content p {
+    font-size: 1rem;
+  }
+
+  .home-about, .home-services, .home-projects {
+    padding: 60px 15px;
+  }
+
+  .project-card img {
+    height: 180px;
+  }
+
+  .service-item {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-hero-content p {
+    font-size: 0.9rem;
+  }
+}
