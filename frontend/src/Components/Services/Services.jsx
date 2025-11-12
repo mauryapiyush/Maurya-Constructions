@@ -5,7 +5,6 @@ import { services } from "../../Data/Services";
 const Services = ({ limit }) => {
   const displayServices = limit ? services.slice(0, limit) : services;
 
-  // State for image popup
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
@@ -38,11 +37,17 @@ const Services = ({ limit }) => {
           </div>
         )}
 
-        {/* Popup for full image */}
+        {/* ✅ Popup Image Viewer */}
         {selectedImage && (
           <div className="image-popup" onClick={() => setSelectedImage(null)}>
-            <div className="image-popup-content" onClick={(e) => e.stopPropagation()}>
-              <button className="close-btn" onClick={() => setSelectedImage(null)}>
+            <div
+              className="image-popup-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="close-btn"
+                onClick={() => setSelectedImage(null)}
+              >
                 ✖
               </button>
               <img src={selectedImage} alt="Service Full" />

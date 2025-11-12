@@ -25,7 +25,7 @@ const Projects = () => {
               <img
                 src={process.env.PUBLIC_URL + project.image}
                 alt={project.title}
-                loading="lazy"  // ✅ Lazy loading for performance
+                loading="lazy"
               />
               <div className="project-info">
                 <h3>{project.title}</h3>
@@ -35,7 +35,7 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Popup Image Viewer */}
+        {/* ✅ Popup Image Viewer */}
         {selectedImage && (
           <div className="image-popup" onClick={() => setSelectedImage(null)}>
             <div
