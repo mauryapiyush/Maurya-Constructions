@@ -28,16 +28,19 @@ const Contact = () => {
             <p>Maharashtra, India</p>
           </div>
 
-          {/* Call & WhatsApp Cards */}
+          {/* Contact Cards */}
           {contacts.map((contact, index) => {
             const phoneLink = `tel:${contact.number.replace(/\D/g, "")}`;
             const whatsappLink = `https://wa.me/${contact.number.replace(/\D/g, "")}`;
+
             return (
               <div className="contact-card" key={index}>
                 <h3>📞 {contact.label} Number</h3>
+
                 <a href={phoneLink} className="contact-btn call-btn">
                   {contact.number}
                 </a>
+
                 <a
                   href={whatsappLink}
                   target="_blank"

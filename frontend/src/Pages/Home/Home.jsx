@@ -8,7 +8,7 @@ const Home = () => {
       {/* Hero Section */}
       <div
         className="home-hero"
-        style={{ backgroundImage: "url('/images/hero.png')" }}
+        style={{ backgroundImage: "url('/images/hero.webp')" }}
       >
         <div className="home-overlay">
           <motion.div
@@ -110,9 +110,9 @@ const Home = () => {
         </p>
         <div className="project-preview">
           {[
-            { src: "/images/Project1.jpg", title: "Luxury Residential Hall Interior", loc: "Maharashtra" },
-            { src: "/images/Project2.jpg", title: "Modern Hall", loc: "Maharashtra" },
-            { src: "/images/Project3.jpg", title: "Contemporary TV unit with Wooden Finish", loc: "Maharashtra" },
+            { src: "/images/Project1.webp", title: "Luxury Residential Hall Interior", loc: "Maharashtra" },
+            { src: "/images/Project2.webp", title: "Modern Hall", loc: "Maharashtra" },
+            { src: "/images/Project3.webp", title: "Contemporary TV unit with Wooden Finish", loc: "Maharashtra" },
           ].map((proj, i) => (
             <motion.div
               className="project-card"

@@ -1,12 +1,11 @@
 /* ============================
-   Projects Section Styles (Updated)
+   Projects Section Styles
 ============================ */
 .projects {
   background-color: #fafafa;
   padding: 100px 20px;
   text-align: center;
   color: #333;
-  scroll-behavior: smooth;
 }
 
 .projects-container {
@@ -14,7 +13,7 @@
   margin: 0 auto;
 }
 
-/* Section Title */
+/* Title */
 .projects h2 {
   font-size: 34px;
   color: #d32f2f;
@@ -22,24 +21,21 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  position: relative;
 }
 
 .projects h2::after {
   content: "";
-  display: block;
   width: 70px;
   height: 3px;
   background: #d32f2f;
   margin: 10px auto 0;
-  border-radius: 2px;
+  display: block;
 }
 
 .projects-subtitle {
   color: #555;
   font-size: 16px;
   margin-bottom: 60px;
-  line-height: 1.6;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -54,200 +50,120 @@
 
 /* Project Card */
 .project-card {
-  background-color: #fff;
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
-  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* Project Image */
-.project-card img {
+/* Image */
+.project-card picture img {
   width: 100%;
   height: 240px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.project-card:hover img {
-  transform: scale(1.03);
+.project-card:hover picture img {
+  transform: scale(1.04);
 }
 
-/* Project Info */
+/* Info */
 .project-info {
   padding: 18px;
   text-align: left;
-  background: #fff;
 }
 
 .project-info h3 {
   color: #d32f2f;
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 6px;
 }
 
 .project-info p {
   color: #666;
   font-size: 14px;
-  line-height: 1.4;
 }
 
 /* ============================
-   ✅ Popup Image Viewer (Fixed)
+   Popup Image Viewer
 ============================ */
 .image-popup {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
   z-index: 2000;
   animation: fadeIn 0.3s ease;
-  padding: 20px;
-  box-sizing: border-box;
 }
 
 .image-popup-content {
   position: relative;
-  width: 100%;
   max-width: 90vw;
   max-height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .image-popup-content img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
   max-height: 80vh;
   border-radius: 12px;
-  object-fit: contain;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   animation: zoomIn 0.3s ease;
 }
 
-/* ✅ Fixed close button */
+/* Close Button */
 .close-btn {
   position: absolute;
   top: 10px;
   right: 10px;
   background: #d32f2f;
-  color: white;
+  color: #fff;
   border: none;
-  font-size: 22px;
-  padding: 8px;
   border-radius: 50%;
+  padding: 8px;
+  font-size: 22px;
   cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, background 0.3s ease;
+  transition: 0.2s ease;
 }
 
 .close-btn:hover {
   background: #b71c1c;
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes zoomIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .projects {
-    padding: 70px 15px;
-  }
-
-  .projects h2 {
-    font-size: 28px;
-  }
-
-  .projects-subtitle {
-    font-size: 15px;
-  }
-
-  .project-card img {
+  .project-card picture img {
     height: 200px;
   }
-
-  .image-popup-content {
-    max-width: 95vw;
-    max-height: 75vh;
-  }
-
-  .close-btn {
-    top: 6px;
-    right: 6px;
-    font-size: 20px;
-    padding: 6px;
+  .image-popup-content img {
+    max-height: 70vh;
   }
 }
 
 @media (max-width: 480px) {
-  .projects-grid {
-    gap: 18px;
-  }
-
-  .project-card {
-    border-radius: 8px;
-  }
-
-  .project-info {
-    padding: 14px;
-  }
-
   .project-info h3 {
     font-size: 16px;
-  }
-
-  .project-info p {
-    font-size: 13px;
-  }
-
-  .image-popup {
-    padding: 10px;
-  }
-
-  .image-popup-content img {
-    max-width: 100%;
-    max-height: 70vh;
-  }
-
-  .close-btn {
-    top: 5px;
-    right: 5px;
-    font-size: 18px;
-    padding: 5px;
   }
 }

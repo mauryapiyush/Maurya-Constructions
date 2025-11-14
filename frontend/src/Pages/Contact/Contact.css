@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: "Poppins", sans-serif;
 }
 
 .contact-container {
@@ -25,6 +26,7 @@
   color: #666;
   font-size: 16px;
   margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 .contact-cards {
@@ -34,18 +36,19 @@
   justify-content: center;
 }
 
+/* Cards */
 .contact-card {
   background: #f8f8f8;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  padding: 28px;
+  border-radius: 12px;
   width: 280px;
-  transition: all 0.3s ease;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .contact-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
 }
 
 .contact-card h3 {
@@ -59,8 +62,10 @@
   color: #555;
   font-size: 15px;
   margin-bottom: 16px;
+  line-height: 1.5;
 }
 
+/* Buttons */
 .contact-btn {
   display: inline-block;
   padding: 10px 18px;
@@ -69,8 +74,8 @@
   border-radius: 6px;
   text-decoration: none;
   color: white;
-  transition: background 0.3s ease;
-  margin: 5px 0;
+  transition: all 0.3s ease;
+  margin: 6px 0;
   width: 100%;
 }
 
@@ -80,6 +85,7 @@
 
 .call-btn:hover {
   background: #b71c1c;
+  transform: scale(1.03);
 }
 
 .whatsapp-btn {
@@ -88,8 +94,10 @@
 
 .whatsapp-btn:hover {
   background: #1ebe57;
+  transform: scale(1.03);
 }
 
+/* Footer */
 .contact-footer {
   margin-top: 60px;
   color: #888;
@@ -101,5 +109,9 @@
 @media (max-width: 768px) {
   .contact-card {
     width: 90%;
+  }
+
+  .contact-page h2 {
+    font-size: 30px;
   }
 }
